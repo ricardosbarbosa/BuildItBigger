@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.github.ricardosbarbosa.jokerandroidlib.JokerActivity;
-import com.google.android.gms.ads.AdView;
 
 
 public class MainActivity extends AppCompatActivity implements AsyncTaskDelegate{
@@ -17,11 +16,6 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskDelegate
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if (BuildConfig.FLAVOR.equals("paid")) {
-            AdView adView = (AdView) findViewById(R.id.adView);
-            adView.setVisibility(View.INVISIBLE);
-        }
     }
 
 
@@ -48,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskDelegate
     }
 
     public void tellJoke(View view) {
-        new EndpointsAsyncTask(this, this).execute();
+        new EndpointsAsyncTask(this).execute();
     }
 
 

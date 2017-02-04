@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.github.ricardobarbosa.builditbigger.backend.myApi.MyApi;
@@ -11,11 +10,9 @@ import java.io.IOException;
 
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
-    private final Context context;
     private final AsyncTaskDelegate delegate;
 
-    public EndpointsAsyncTask(Context context, AsyncTaskDelegate delegate){
-        this.context = context;
+    public EndpointsAsyncTask( AsyncTaskDelegate delegate){
         this.delegate = delegate;
     }
     @Override
